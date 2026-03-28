@@ -6,6 +6,21 @@ Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans
 
 ---
 
+## 👋 Already downloaded? Start here.
+
+Open the Claude desktop app, select this folder as your workspace, and type:
+
+```
+/shine-setup
+```
+
+A setup wizard will walk you through naming your agents and customising everything for your business. Takes about 10 minutes.
+
+> **Need Claude desktop?** → [claude.ai/download](https://claude.ai/download)
+> You'll need Claude Pro ($20/mo) or Max ($100/mo) and Cowork mode enabled (currently in beta — find it in Claude settings).
+
+---
+
 ## What Is This?
 
 SHINE is a framework for running your business with a squad of named AI agents — each with a defined role, working together through a shared task system.
@@ -34,13 +49,19 @@ Those are optional layers you can add later. This works out of the box.
 
 ## Quick Install
 
+**Option A — Download ZIP** (easiest)
+
+Click the green **Code** button above → **Download ZIP** → unzip → open Claude desktop → select that folder as your workspace → type `/shine-setup`.
+
+**Option B — Git clone**
+
 ```bash
 git clone https://github.com/davidshineoncleans/shine-agent-mesh
 ```
 
-Then follow `Setup/01_QUICK_START.md`.
+Then open Claude desktop, select the cloned folder as your workspace, and type `/shine-setup`.
 
-Or: **one-click plugin install coming soon** — watch [shineon.world](https://shineon.world) for updates.
+> One-click plugin install coming soon — watch [shineon.world](https://shineon.world) for updates.
 
 ---
 
