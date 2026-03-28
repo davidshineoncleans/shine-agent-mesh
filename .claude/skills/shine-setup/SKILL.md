@@ -1,128 +1,201 @@
 ---
 name: shine-setup
-description: "First-time setup wizard for the SHINE Agent Mesh. Customises CLAUDE.md, TASKS.md, and agent folders for your specific business in a single session."
+description: "First-time setup wizard for SHINE Agent Mesh. Runs a guided session that goes from zero to a working AI operating system — with something impressive happening before any speccing."
 ---
 
-# SHINE Setup Wizard
+# SHINE Setup Skill
 
-You are running the first-time setup for the SHINE Agent Mesh. Your job is to ask the right questions, then customise the workspace for this specific business — replacing all `[PLACEHOLDERS]` with real content, naming the agents, and setting up the folder structure.
+**Trigger phrases:** "let's get set up", "I've just downloaded SHINE", "set up my workspace", "run setup", or any first message from a user whose CLAUDE.md still contains `[PLACEHOLDER]` values.
 
-Do not skip steps. Do not invent information. Ask each question and wait for the answer before proceeding.
+**What this does:** Takes a new user from zero to a working AI operating system in about 10 minutes. Leads with something impressive before touching any configuration.
 
----
-
-## Step 1 — Welcome
-
-Introduce yourself warmly:
-
-> "Welcome to SHINE Agent Mesh. I'm going to ask you a few questions about your business, then customise everything for you. This takes about 10 minutes and you won't have to do it again. Ready? Let's start."
+**Architecture note for builders:** This skill is intentionally modular. Each step is self-contained. To add a new step, copy the Step Template at the bottom and insert it where it fits. The webhook call step (Step 3) is a stub — wire it up when your n8n intake endpoint is ready.
 
 ---
 
-## Step 2 — Business Basics
+## STEP 1 — Welcome & First Questions
 
-Ask these questions **one at a time**, waiting for each answer:
+Say this (warm, direct, no waffle):
 
-1. "What's the name of your business?"
-2. "In one sentence, what do you do and who do you serve?"
-3. "What's your main service or product? (The one that makes up most of your revenue)"
-4. "What area or market do you operate in?"
-5. "What's your name — the founder?"
-6. "What's your business email or the best way for customers to reach you?"
+> Welcome to SHINE Agent Mesh. 🙌
+>
+> In the next 10 minutes, you're going to have a named AI squad running your business. Not a chatbot. Not a prompt library. An operating model — with agents that handle enquiries, think strategically, keep things moving, and log everything.
+>
+> But first — before we configure anything — I want to show you what the end result actually feels like.
+>
+> Two quick questions:
+
+Ask:
+1. What's the name of your business?
+2. What kind of business is it? (e.g. cleaning, plumbing, consulting, coaching — just a few words)
+
+Store as `{{business_name}}` and `{{business_type}}`. Confirm and move to Step 2.
 
 ---
 
-## Step 3 — The Problem You're Solving
+## STEP 2 — Find the Real Problem
+
+Don't spec anything yet. Find the pain first.
 
 Ask:
 
-> "What's the biggest operational headache in your business right now? The thing that eats the most time or causes the most stress."
+> What's the one thing in your business that's eating your time or driving you mad right now? Leads falling through the cracks, no-shows, quote follow-ups, late payments, admin — anything.
 
-Listen carefully. This shapes which agents you prioritise and what their first tasks are.
+Let them answer freely. Reflect it back in one sentence. This becomes the anchor for everything that follows.
 
-Then ask:
-> "And what would 'sorted' look like? What would you ideally have running automatically?"
+Store as `{{core_problem}}`.
 
----
+Then say:
 
-## Step 4 — Name Your Agents
+> Perfect. That's exactly what we're going to fix. And I want to show you *how* before we set anything up.
 
-Explain:
-
-> "SHINE uses named agents — each one has a defined role. Some people keep it functional ('Service Advisor', 'Ops Captain'), others give them human names that fit their brand. What feels right for you?"
-
-Then walk through each role:
-
-1. **Customer-facing agent** (handles enquiries, quotes, calls) — "What do you want to call this one?"
-2. **Operations agent** (strategic brain, dispatches tasks) — name?
-3. **Task manager** (scheduling, follow-ups) — name?
-4. **Receptionist/router** (inbound triage) — name?
-5. **Support agent** (complaints, aftercare) — name?
-
-Note: they don't need all five to start. Ask which 2-3 they want to set up first.
+Move to Step 3.
 
 ---
 
-## Step 5 — Customise the Workspace
+## STEP 3 — The Demo Call ⭐ [WEBHOOK STUB — activate when endpoint is live]
 
-Now make the changes. Do all of the following:
+**This is the "wow" moment. Run this before any agent naming or configuration.**
 
-### 5a — Update CLAUDE.md
+Say:
 
-Read the file at `CLAUDE.md`. Replace:
-- `[YOUR_BUSINESS_NAME]` → their business name
-- `[ONE LINE DESCRIPTION]` → their one-line description
-- `[YOUR_MAIN_SERVICE]` → their main service
-- `[YOUR_MARKET]` → their market/area
-- `[YOUR_NAME]` → founder name
-- All `[SERVICE_ADVISOR]`, `[OPS_CAPTAIN]`, `[TASK_MANAGER]`, `[RECEPTIONIST]`, `[SUPPORT_AGENT]` → their chosen agent names
-
-### 5b — Update Memory/glossary.md
-
-Fill in the Agent Squad table and Business Reference table with everything collected.
-
-### 5c — Rename Agent Folders
-
-For each agent they're starting with, rename the folder from the role template name to their chosen agent name. E.g. `Agents/service-advisor/` → `Agents/Archer/`
-
-### 5d — Update TASKS.md
-
-Replace the setup tasks with their first real tasks based on the operational problem they described. Give them 3 specific, actionable tasks to start.
-
-### 5e — Update INDEX.md
-
-Replace the report count placeholder with 0 and set today's date.
-
----
-
-## Step 6 — Confirm and Summarise
-
-Show them:
-
-> "Here's what I've set up:
+> Here's something a bit different. Instead of telling you what your AI agent will sound like — I want to let you hear it.
 >
-> **Your squad:** [list their named agents and roles]
-> **Your first 3 tasks:** [list them]
-> **What's ready now:** You can start running sessions immediately. Just open a new Cowork session and your agents are ready to work.
-> **When you're ready to add the stack:** See `Setup/02_ADD_YOUR_STACK.md` for n8n, Supabase, and Retell.
+> If you give me your phone number, I'll send a message to the SHINE system and one of our agents will call you within 60 seconds. Short demo call — just to show you the kind of thing your own agent will be doing once we've built it.
 >
-> One last thing — if you build something interesting on top of this, David Caldicott would genuinely love to hear about it: hello@shineon.world"
+> Want to try it?
+
+If yes, ask for their phone number.
+
+**Fire this webhook:**
+
+```
+POST https://shineon.world/api/welcome-call
+Content-Type: application/json
+
+{
+  "business_name": "{{business_name}}",
+  "business_type": "{{business_type}}",
+  "core_problem": "{{core_problem}}",
+  "phone": "{{phone_number}}",
+  "source": "shine-setup"
+}
+```
+
+Then say:
+
+> Done — you should get a call in the next 60 seconds. Answer it and see what you think. While you're waiting, let's keep going.
+
+If they skip: acknowledge it warmly and move on. Don't push.
+
+> **[BUILDER NOTE: This step is a stub. The endpoint needs to be live and wired to an n8n workflow that triggers a Retell welcome call. See `Dev/NEXT_SESSION_PROMPT.md` for the build spec. To activate: build the endpoint, replace the URL, delete this note.]**
 
 ---
 
-## Step 7 — First Session
+## STEP 4 — Name Your Squad
 
-Offer to run a first real session with them:
+Now they've experienced (or heard about) the end result, naming agents feels real — not abstract.
 
-> "Want to tackle that [operational problem they described] right now? I can start a live session report and we can make some real progress."
+Say:
 
-If yes: create `Reports/[TODAY'S_DATE]_session-first-setup.md` and run a proper SHINE session.
+> Now let's make this yours. Your AI squad needs names — not "Agent 1". Real names that fit your vibe.
+>
+> Here are the five roles. Name them whatever you want — someone you admire, a character, a team member you wish you had.
+
+Present the five roles and ask for a name for each:
+
+| Role | What they do | Default name |
+|------|-------------|--------------|
+| Service Advisor | Handles all customer enquiries, quotes, and calls | Archer |
+| Ops Captain | Strategic brain — pipeline, decisions, dispatch | Marshall |
+| Task Manager | Scheduling, follow-ups, keeps things moving | Gale |
+| Receptionist | Triages inbound, routes to the right agent | Donna |
+| Support Agent | Handles complaints, tricky situations | Giles |
+
+Store as:
+- `{{service_advisor_name}}`
+- `{{ops_captain_name}}`
+- `{{task_manager_name}}`
+- `{{receptionist_name}}`
+- `{{support_agent_name}}`
 
 ---
 
-## Notes for Claude
+## STEP 5 — Build the Workspace
 
-- Be warm and conversational, not robotic. This is someone setting up their business operations — it matters to them.
-- If they seem unsure about agent names, suggest options based on their business type. A cleaning company might suit professional names; a creative agency might prefer personality-led names.
-- Don't overwhelm them with technical detail about n8n/Supabase/Retell. That's Step 2. This is Step 1.
-- If they ask "do I need all five agents?" — no. Two or three to start is fine. The others can be added when needed.
+Do this efficiently — don't narrate every edit. Just do it.
+
+**5a. Update CLAUDE.md**
+- Replace `[YOUR BUSINESS NAME]` → `{{business_name}}`
+- Replace `[YOUR BUSINESS TYPE]` → `{{business_type}}`
+- Replace agent placeholder names with the names from Step 4
+
+**5b. Update Memory/glossary.md**
+- Fill in the agent squad table with chosen names and roles
+- Add `{{business_name}}` to the business reference section
+
+**5c. Update TASKS.md**
+- Mark the first setup task (`[x]`) — done
+- Add: "First session with {{ops_captain_name}} — describe your business and ask what to tackle first"
+
+**5d. Update INDEX.md**
+- Replace `[YOUR BUSINESS NAME]` with `{{business_name}}`
+- Update the Last Updated timestamp
+
+Confirm when done:
+
+> All set. Your workspace is live for {{business_name}}. Your squad is ready.
+
+---
+
+## STEP 6 — First Real Win
+
+Don't end on setup. End on action.
+
+Remind them of the problem from Step 2, then say:
+
+> You said earlier that {{core_problem}} is the thing driving you mad. Let's not leave that on the table.
+>
+> Want to tackle it right now? Tell me a bit more and we'll figure out which of your agents owns it and what the first move is.
+
+If they engage: work the problem. Create a real task in TASKS.md. Show them the system in action.
+
+If they want to stop: leave them with a ready-to-go prompt for next session:
+
+> Next time you open this workspace, say: "{{ops_captain_name}}, I want to work on {{core_problem}} — where do we start?"
+
+---
+
+## [ADD NEW STEPS HERE]
+
+> **For builders:** Insert additional steps between any existing ones. Good candidates for future steps:
+> - **Step 3b:** "Design your first Retell agent" — walk through Retell setup, generate a prompt, test a live call
+> - **Step 3c:** "Connect your calendar" — link Google Calendar so the Ops Captain can see what's coming
+> - **Step 5e:** "Set up your first email drip" — configure outbound sequences for new leads
+> - **Step 7:** "Invite your team" — multi-user workspace setup
+>
+> Each step should have: one clear goal, what Claude says, what Claude does, what gets stored, what gets written, and a confirmation line.
+
+---
+
+## Step Template
+
+Copy this to add a new step:
+
+```
+## STEP N — [Name]
+
+**Goal:** [One sentence — what this achieves for the user]
+
+Say: [What Claude says to introduce this step]
+
+Ask: [Questions to ask, if any]
+
+Do: [What Claude does — files to edit, webhooks to fire, etc.]
+
+Store: [Variable names for anything captured, e.g. {{phone_number}}]
+
+Confirm: [What Claude says when the step is complete]
+
+Then: Move to Step N+1.
+```

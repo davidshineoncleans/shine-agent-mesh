@@ -8,13 +8,19 @@ Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans
 
 ## 👋 Already downloaded? Start here.
 
-Open the Claude desktop app, select this folder as your workspace, and type:
+**Step 1 — Install the setup skill**
 
-```
-/shine-setup
-```
+In the Claude desktop app, go to **Settings → Skills → Add skill** and upload the file at `.claude/skills/shine-setup/SKILL.md`. Do the same for `.claude/skills/shine-reports/SKILL.md`.
 
-A setup wizard will walk you through naming your agents and customising everything for your business. Takes about 10 minutes.
+**Step 2 — Open your workspace**
+
+In Claude desktop, select this folder as your Cowork workspace.
+
+**Step 3 — Say this:**
+
+> I've just downloaded SHINE Agent Mesh. Let's get set up.
+
+Claude will take it from there. The whole setup takes about 10 minutes and ends with something you can actually use today.
 
 > **Need Claude desktop?** → [claude.ai/download](https://claude.ai/download)
 > You'll need Claude Pro ($20/mo) or Max ($100/mo) and Cowork mode enabled (currently in beta — find it in Claude settings).
