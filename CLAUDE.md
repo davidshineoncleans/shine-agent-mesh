@@ -1,33 +1,55 @@
-# SHINE Agent Mesh — Operating System
+# SHINE OS — Your AI Operating System
 
 > Built by David Caldicott · hello@shineon.world · shineon.world
 > Fork this. Use it. If you improve it, tell us: hello@shineon.world
 
 ---
 
+## How to Use This File
+
+This file is the brain of SHINE OS. Your AI reads it at the start of every session to understand your business, your agents, and how everything works.
+
+**Claude Cowork** — This file loads automatically. Just open the folder and start talking.
+
+**ChatGPT / Gemini / any AI** — Copy the contents of this file and paste it as your first message at the start of each session. Or use Custom Instructions / System Prompts to load it permanently.
+
+**Obsidian + any AI** — Keep this as a note in your vault. Copy relevant sections when starting a session. The wiki-links still work natively in Obsidian.
+
+The AI tool doesn't matter. The files are the system.
+
+---
+
 ## What This Is
 
-SHINE is an operating model for running your business with AI agents. Not a chat assistant — a structured squad of named agents, each with a defined role, working together through a shared task system.
+SHINE OS is an operating model for running your business with AI agents. Not a chat assistant — a structured squad of named agents, each with a defined role, working together through a shared task system.
 
 You are the founder. Your agents are your AI operations team. This file is their shared briefing.
 
-**What you get without any integrations:**
+**What you get right now (no integrations needed):**
 - A named AI squad with defined roles
 - Session conventions that maintain context across days and weeks
 - A task tracking system that survives between conversations
-- A knowledge graph (Obsidian wiki-links) connecting all your docs
-- A setup wizard that customises everything for your business
+- A knowledge graph (wiki-links) connecting all your docs
+- Agent prompt templates you can customise for any AI platform
 
-**What you can add later:**
-- n8n Cloud — for workflow automation between agents
-- Supabase — for persistent data (leads, tasks, customer records)
-- Retell — for AI voice agents that make and take calls
+**What you can add later (Tier 2 — shine-activated):**
+- n8n Cloud — workflow automation between agents
+- Supabase — persistent data (leads, tasks, customer records)
+- Retell — AI voice agents that make and take calls
+- Install guide: shineon.world/install
+
+**What you can subscribe to (Tier 3 — shine-integrated):**
+- Run on SHINE managed infrastructure
+- Access Atlas (scheduling/ops), ShineOn (comms), full app suite
+- Your agents powered by our existing mesh of workflows
+- Free tier available — paid unlocks management agents and premium features
+- Details: shineon.world/platform
 
 ---
 
 ## Your Business
 
-> **Run the setup wizard first.** Open Cowork, type `/shine-setup`, and it will fill this section in for you.
+> **First time?** Tell your AI: "I've just downloaded SHINE OS. Let's get set up." It will walk you through filling this section in.
 
 | Field | Value |
 |-------|-------|
@@ -59,14 +81,14 @@ Each agent has a defined role. Name them whatever suits your brand — the role 
 
 ### Every Session Starts With
 
-1. Run `date` to capture start time
+1. Note the date and time
 2. Create `Reports/YYYY-MM-DD_session-{topic}_LIVE.md`
-3. Note your opening objective in the S — Situation section
-4. Set status: `⚡ IN PROGRESS`
+3. Write your opening objective in the S — Situation section
+4. Set status: ⚡ IN PROGRESS
 
 ### During the Session
 
-After each significant piece of work, append a work block entry to your live report:
+After each significant piece of work, log it:
 ```
 ### Work Block N — Description (HH:MM)
 Brief note of what was done, decided, or created.
@@ -84,7 +106,7 @@ Both steps are mandatory. The report captures the narrative. TASKS captures the 
 
 ## File Organisation
 
-Root contains 3 files + 5 folders only.
+Root contains 3 core files + 5 folders.
 
 | Folder | What goes here |
 |--------|---------------|
@@ -121,33 +143,37 @@ Project-level task files must include `Parent: [[TASKS]]` in their header.
 
 ---
 
-## Wiki-Links (Obsidian)
+## Wiki-Links
 
-Every `.md` file should include this header block below the H1:
+If you're using Obsidian (or any tool that supports wiki-links), every `.md` file should include this header below the H1:
 
 ```
 Parent: [[CLAUDE]]
 Related: [[TASKS]] · [[glossary]]
 ```
 
-Link to the note name (filename without `.md`), not the file path. Use `[[glossary]]` not `[[Memory/glossary.md]]`.
+Link to the note name (filename without `.md`), not the file path. Even if you're not using Obsidian, these links serve as a navigable reference — they tell you what connects to what.
 
 ---
 
 ## Safety Rules
 
 - Never delete files — move to `_archive/` instead
-- Never hardcode credentials in any file in this repo
+- Never hardcode credentials in any file
 - Never push real customer data to a public repository
-- Credentials, API keys, and URLs belong in environment variables or a private config file (not tracked by git)
+- Credentials, API keys, and URLs belong in environment variables or a private config file
 
 ---
 
 ## Credits & Attribution
 
-SHINE Agent Mesh was created by David Caldicott.
+SHINE OS was created by David Caldicott — founder of Shine On Cleans, where this system runs a live business every day.
 
-If you build something useful on top of this, we'd genuinely love to hear about it:
+Three ways to go deeper:
+- **shine-os** (this repo) — free, works with any AI
+- **shine-activated** — self-hosted infrastructure (shineon.world/install)
+- **shine-integrated** — managed platform under your brand (shineon.world/platform)
+
 📧 hello@shineon.world
 🌐 shineon.world
 

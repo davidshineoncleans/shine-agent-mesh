@@ -1,35 +1,37 @@
-# SHINE Agent Mesh
+# SHINE OS
 
-**An AI operating system for your business. Free. No catch.**
+**An AI operating system for your business. Works with any AI. Free. No catch.**
 
-Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans, where this system runs live.
+Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans, where this system runs a live business every day.
 
 ---
 
-## 👋 Already downloaded? Start here.
+## 👋 Start here.
 
-**Step 1 — Install the setup skill**
+Download this folder. Open your AI. Say:
 
-In the Claude desktop app, go to **Settings → Skills → Add skill** and upload the file at `.claude/skills/shine-setup/SKILL.md`. Do the same for `.claude/skills/shine-reports/SKILL.md`.
+> **"I've just downloaded SHINE OS. Let's get set up."**
 
-**Step 2 — Open your workspace**
+Your AI reads `CLAUDE.md`, understands the system, and walks you through a 10-minute setup. When you're done, you've got a named squad of AI agents, a task tracker, session reports, and something you can actually use today.
 
-In Claude desktop, select this folder as your Cowork workspace.
+---
 
-**Step 3 — Say this:**
+## Works With Any AI
 
-> I've just downloaded SHINE Agent Mesh. Let's get set up.
+| Platform | How it works |
+|----------|-------------|
+| **Claude Cowork** | Best experience — select this folder as your workspace, start talking. `CLAUDE.md` loads automatically. |
+| **ChatGPT / Gemini / any AI** | Copy the contents of `CLAUDE.md` and paste it as your first message each session. Or use Custom Instructions to load it permanently. |
+| **Obsidian + any AI** | Open this folder as an Obsidian vault. The wiki-links work natively. Copy context into your AI when you need it. |
+| **Google Drive + any AI** | Upload the files to a Drive folder. Reference them when working with your AI. How this system was originally built. |
 
-Claude will take it from there. The whole setup takes about 10 minutes and ends with something you can actually use today.
-
-> **Need Claude desktop?** → [claude.ai/download](https://claude.ai/download)
-> You'll need Claude Pro ($20/mo) or Max ($100/mo) and Cowork mode enabled (currently in beta — find it in Claude settings).
+The AI is the reader. The files are the system.
 
 ---
 
 ## What Is This?
 
-SHINE is a framework for running your business with a squad of named AI agents — each with a defined role, working together through a shared task system.
+SHINE OS is a framework for running your business with a squad of named AI agents — each with a defined role, working together through a shared task system.
 
 Not a chatbot. Not a prompt library. An operating model.
 
@@ -37,19 +39,32 @@ You get a **Service Advisor** that handles enquiries and quotes. An **Ops Captai
 
 They share context. They hand off to each other. They log everything.
 
-And a 10-minute setup wizard names them whatever you want and customises everything for your business.
+---
+
+## Three Tiers
+
+SHINE works at whatever level you need it.
+
+| Tier | What you get | What you need | Cost |
+|------|-------------|--------------|------|
+| **shine-os** (this repo) | The methodology — sessions, tasks, agents, decision logs. Works with any AI + any file system. | Any AI subscription + a folder | Free |
+| **shine-activated** | Full infrastructure — automated workflows, persistent database, AI voice agents. Self-hosted on your own accounts. | n8n + Supabase + Retell | ~$50-150/mo |
+| **shine-integrated** | Managed platform — run on SHINE infrastructure, access Atlas and ShineOn apps under your own brand. | A subscription | Free tier available |
+
+Start with shine-os. Add the rest when you hit the ceiling.
+
+→ **shine-activated:** [shineon.world/install](https://shineon.world/install)
+→ **shine-integrated:** [shineon.world/platform](https://shineon.world/platform)
 
 ---
 
-## What You Need
+## What You Need (Tier 1 — shine-os)
 
-- [Claude desktop app](https://claude.ai/download)
-- Claude Pro ($20/month) or Max ($100/month)
-- Cowork mode enabled (beta — available in Claude settings)
+- Any AI that can read text (Claude, ChatGPT, Gemini, local models, anything)
+- A folder on your computer
+- 10 minutes
 
-**No database. No automation platform. No coding.**
-
-Those are optional layers you can add later. This works out of the box.
+**No database. No automation platform. No coding. No specific AI tool.**
 
 ---
 
@@ -57,26 +72,22 @@ Those are optional layers you can add later. This works out of the box.
 
 **Option A — Download ZIP** (easiest)
 
-Click the green **Code** button above → **Download ZIP** → unzip → open Claude desktop → select that folder as your workspace → type `/shine-setup`.
+Click the green **Code** button above → **Download ZIP** → unzip → open your AI → paste the contents of `CLAUDE.md` or select the folder in Cowork → say "I've just downloaded SHINE OS. Let's get set up."
 
 **Option B — Git clone**
 
 ```bash
-git clone https://github.com/davidshineoncleans/shine-agent-mesh
+git clone https://github.com/davidshineoncleans/shine-os
 ```
-
-Then open Claude desktop, select the cloned folder as your workspace, and type `/shine-setup`.
-
-> One-click plugin install coming soon — watch [shineon.world](https://shineon.world) for updates.
 
 ---
 
 ## What's Included
 
 ```
-shine-agent-mesh/
-├── CLAUDE.md              ← The operating system (read every session)
-├── TASKS.md               ← Your single source of truth for work in progress
+shine-os/
+├── CLAUDE.md              ← The operating system (your AI reads this every session)
+├── TASKS.md               ← Single source of truth for work in progress
 ├── INDEX.md               ← Directory map
 │
 ├── Agents/                ← Agent prompt templates for each role
@@ -85,10 +96,6 @@ shine-agent-mesh/
 │   ├── task-manager/      ← Execution: scheduling, follow-ups, reminders
 │   ├── receptionist/      ← Inbound: routing and triage
 │   └── support-agent/     ← Support: complaints and aftercare
-│
-├── Skills/
-│   ├── shine-setup/       ← First-time setup wizard (/shine-setup)
-│   └── shine-reports/     ← Session reporting format (/shine-reports)
 │
 ├── Memory/                ← Your glossary, branding, and business reference
 ├── Ops/                   ← Your operational docs (pricing, pipelines, etc.)
@@ -110,21 +117,7 @@ shine-agent-mesh/
 
 **Context persists.** Session reports, your glossary, and your task tracker give your AI squad memory across days, weeks, and months — without a database.
 
-**It grows with you.** Start with the framework and two agents. Add the full automation stack when you're ready. The methodology works the same either way.
-
----
-
-## The Stack (Optional)
-
-When you're ready to automate:
-
-| Layer | Tool | What it adds |
-|-------|------|-------------|
-| Data | [Supabase](https://supabase.com) | Persistent task storage, session history, lead records |
-| Automation | [n8n](https://n8n.io) | Agents trigger each other automatically |
-| Voice | [Retell](https://retell.ai) | AI phone agents that make and take calls |
-
-See `Setup/02_ADD_YOUR_STACK.md` for setup guides.
+**It grows with you.** Start with the methodology alone. Add the full automation stack when you outgrow it. The operating model works the same either way.
 
 ---
 
@@ -134,9 +127,9 @@ I'm David Caldicott. I run [Shine On Cleans](https://shineon.uk) — an AI-suppo
 
 I built SHINE because I needed a system, not just tools. This is what runs my business live: AI agents that handle enquiries, take calls, manage tasks, and dispatch each other — while I focus on growing the company.
 
-I'm releasing the framework because the problem is universal. Every founder with a service business is drowning in the same operational noise. And most AI tools just add to it.
+I started this in Google Drive, pasting context into ChatGPT. Then I moved to Obsidian. Then Claude Cowork came along and made it seamless. But the methodology worked before any specific tool existed — and it'll work after.
 
-This is different. Fork it, use it, and if you build something interesting on top of it, tell me about it.
+I'm releasing the framework because the problem is universal. Every founder with a service business is drowning in the same operational noise. And most AI tools just add to it.
 
 ---
 
@@ -145,12 +138,13 @@ This is different. Fork it, use it, and if you build something interesting on to
 - [Use Cases & Day-to-Day Experience](USE_CASES.md) — real examples for trades, consultants, agencies, property managers
 - [Honest Limitations](LIMITATIONS.md) — what this doesn't do, what it costs, where it breaks down
 - [Design Decisions](Memory/design-decisions.md) — the reasoning behind every architectural choice
+- [Architecture: shine-os vs shine-activated](Dev/ARCHITECTURE_DECISION.md) — why two products, not one
 
 ---
 
 ## Contribute / Feedback
 
-Found a bug? Improved something? Built an extension?
+Found a bug? Improved something? Built an extension? Want to run your business on our platform?
 
 📧 hello@shineon.world
 
@@ -160,9 +154,8 @@ I read everything.
 
 ## Licence
 
-MIT. Fork it, use it commercially, ship it to clients.
-Attribution appreciated but not required. Just don't remove the contact line from `CLAUDE.md`.
+CC0 1.0 Universal. Public domain. Use it however you want.
 
 ---
 
-*SHINE Agent Mesh — created by David Caldicott · [shineon.world](https://shineon.world)*
+*SHINE OS — created by David Caldicott · [shineon.world](https://shineon.world)*
