@@ -49,14 +49,16 @@ You are the founder. Your agents are your AI operations team. This file is their
 
 ## Your Business
 
-> **First time?** Tell your AI: "I've just downloaded SHINE OS. Let's get set up." It will walk you through filling this section in.
+> **First time?** Two options:
+> 1. **Quick start:** Fill in the table below yourself, then tell your AI: *"I've set up SHINE OS. Read my CLAUDE.md and let's run our first session."*
+> 2. **Guided setup:** Tell your AI: *"I've just downloaded SHINE OS. Help me fill in my CLAUDE.md and get my workspace ready."* It will ask you questions and help you complete each section.
 
 | Field | Value |
 |-------|-------|
 | **Business name** | [YOUR_BUSINESS_NAME] |
-| **What you do** | [ONE LINE DESCRIPTION] |
-| **Primary service** | [YOUR_MAIN_SERVICE] |
-| **Location/market** | [YOUR_MARKET] |
+| **What you do** | [ONE LINE DESCRIPTION — e.g. "Residential cleaning service"] |
+| **Primary service** | [YOUR_MAIN_SERVICE — e.g. "Regular home cleaning"] |
+| **Location/market** | [YOUR_MARKET — e.g. "Norwich, UK"] |
 | **Your name** | [YOUR_NAME] |
 
 ---

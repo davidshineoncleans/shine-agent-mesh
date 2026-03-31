@@ -14,9 +14,9 @@ Parent: [[CLAUDE]]
 
 ## In Progress
 
-- [ ] **Complete setup wizard** — Run `/shine-setup` in Cowork to customise CLAUDE.md for your business
+- [ ] **Set up your workspace** — Tell your AI: *"I've just installed SHINE OS. Let's get set up."* It will walk you through customising CLAUDE.md
 - [ ] **Name your agents** — Rename the folders in `Agents/` to match your squad names
-- [ ] **Write your first agent prompt** — Start with your Service Advisor in `Agents/[your-name]/`
+- [ ] **Write your first agent prompt** — Start with your Service Advisor — edit the prompt template in `Agents/service-advisor/`
 
 ---
 

@@ -1,9 +1,5 @@
 # SHINE OS
 
-Parent: [[codebase-map]]
-Architecture: [[shine-agent-mesh-architecture|Full Architecture Docs]]
-Related: [[architecture|ClientChat]] · [[atlasdelivery-architecture|Atlas]] · [[glow-architecture|Glow]] · [[span-architecture|Span]]
-
 **An AI operating system for your business. Works with any AI. Free. No catch.**
 
 Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans, where this system runs a live business every day.
@@ -101,12 +97,12 @@ shine-os/
 │
 │── ─── TIER 1: shine-os (works now) ───
 │
-├── Agents/                ← Agent prompt templates for each role
-│   ├── service-advisor/   ← Customer-facing: quotes, enquiries, calls
-│   ├── ops-captain/       ← Strategic brain: pipeline, dispatch, decisions
-│   ├── task-manager/      ← Execution: scheduling, follow-ups, reminders
-│   ├── receptionist/      ← Inbound: routing and triage
-│   └── support-agent/     ← Support: complaints and aftercare
+├── Agents/                ← Agent prompt templates + knowledge bases
+│   ├── service-advisor/   ← Quotes, enquiries, calls + pricing, FAQ, objections
+│   ├── ops-captain/       ← Pipeline, dispatch, decisions
+│   ├── task-manager/      ← Scheduling, follow-ups, reminders
+│   ├── receptionist/      ← Inbound routing and triage
+│   └── support-agent/     ← Complaints and aftercare
 │
 ├── Memory/                ← Your glossary, branding, and business reference
 ├── Ops/                   ← Your operational docs (pricing, pipelines, etc.)
