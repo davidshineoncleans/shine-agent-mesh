@@ -11,7 +11,7 @@ Built by [David Caldicott](https://shineon.world) — founder of Shine On Cleans
 One command. That's it.
 
 ```bash
-curl -fsSL https://shineon.world/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/davidshineoncleans/shine-os/main/install.sh | bash
 ```
 
 It clones the repo, asks 4 quick questions, customises your workspace, and Donna — our AI receptionist — calls you within 60 seconds to welcome you.
@@ -74,7 +74,7 @@ Start with shine-os. Add the rest when you hit the ceiling.
 **Recommended — one command:**
 
 ```bash
-curl -fsSL https://shineon.world/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/davidshineoncleans/shine-os/main/install.sh | bash
 ```
 
 **Or clone it yourself:**
