@@ -144,9 +144,9 @@ shine-os/
 
 ## Who Built This and Why
 
-I'm David Caldicott. I run [Shine On Cleans](https://shineon.uk) — an AI-supported cleaning service in the UK.
+I'm David Caldicott. I built [Shine On Cleans](https://shineon.uk) — an AI-supported cleaning service in the UK.
 
-I built SHINE because I needed a system, not just tools. This is what runs my business live: AI agents that handle enquiries, take calls, manage tasks, and dispatch each other — while I focus on growing the company.
+I built SHINE because I needed a system, not just tools. This is what I built to run my business live: AI agents that handle enquiries, take calls, manage tasks, and dispatch each other — while I focused on growing the company. Sadly, the company has ceased trading - turns out, they just wanted a cleaner, and getting a pensioner to have a call with an Ai was near impossible. Onwards. 
 
 I started this in Google Drive, pasting context into ChatGPT. Then I moved to Obsidian. Then Claude Cowork came along and made it seamless. But the methodology worked before any specific tool existed — and it'll work after.
 
@@ -161,13 +161,20 @@ I'm releasing the framework because the problem is universal. Every founder with
 - [Design Decisions](Memory/design-decisions.md) — the reasoning behind every architectural choice
 - [Architecture: shine-os vs shine-activated](Dev/ARCHITECTURE_DECISION.md) — why two products, not one
 
+## Also see
+
+### HumanCode
+My easy-to-learn encoding system for saving my own brainpower, as well as my Ai tokens. Up to 75% compression but still readable to an untrained eye; with just a little concentration. 
+
+Learn more here: [davidcaldicott.online/projects/humancode](https://www.davidcaldicott.online/projects/humancode)
+
 ---
 
 ## Contribute / Feedback
 
 Found a bug? Improved something? Built an extension? Want to run your business on our platform?
 
-📧 hello@shineon.world
+📧 davidcaldicott.online
 
 I read everything.
 
